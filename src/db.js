@@ -1,22 +1,13 @@
 import pg from "pg";
 import dotenv from 'dotenv';
 
-dotenv.config()
-
-const {
-    DB_USER,
-    DB_PASSWORD,
-    DB_HOST,
-    DB_NAME,
-    DB_PORT
-} = process.env
+dotenv.config();
 
 const pool = new pg.Pool({
-    user: DB_USER,
-    host:DB_HOST,
-    password: DB_PASSWORD,
-    database: DB_NAME,
-    port: DB_PORT
-})
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false  // Necesario para conexiones SSL en Heroku
+    }
+});
 
-export default pool
+export default pool;
