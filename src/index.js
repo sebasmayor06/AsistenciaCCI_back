@@ -9,7 +9,7 @@ const app = express();
 // Lista de orígenes permitidos
 const allowedOrigins = [
   'http://localhost:5173', // Para desarrollo
-  'https://asistencia-cci-front-dc13af93f3e4.herokuapp.com' // Para producción
+  'https://asistencia-cci-front-dc13af93f3e4.herokuapp.com/' // Para producción
 ];
 
 // Configuración de CORS
