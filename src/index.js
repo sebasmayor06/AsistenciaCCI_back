@@ -1,30 +1,14 @@
-import express from 'express';
-import userRoutes from './routes/user.routes.js';
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import morgan from 'morgan';
+import express from 'express'
+import userRoutes from './routes/user.routes.js'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import morgan from 'morgan'
 
 const app = express();
 
-// Lista de orígenes permitidos
-const allowedOrigins = [
-  'http://localhost:5173', // Para desarrollo
-  'https://asistencia-cci-front-dc13af93f3e4.herokuapp.com' // Para producción
-];
-
-// Configuración de CORS
+// Configuración de CORS para desarrollo. Podrías necesitar ajustar esto para producción
 app.use(cors({
-    origin: function (origin, callback) {
-        // Permitir solicitudes sin 'origin' (como mobile apps o curl requests)
-        if (!origin) return callback(null, true);
-        
-        if (allowedOrigins.indexOf(origin) === -1) {
-            var msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-            return callback(new Error(msg), false);
-        }
-        
-        return callback(null, true);
-    },
+    origin: "https://asistencia-cci-front-dc13af93f3e4.herokuapp.com", // Asegúrate de cambiar esto o hacerlo dinámico en producción
     credentials: true
 }));
 
@@ -38,3 +22,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is listening on port: ${PORT}`);
 });
+
