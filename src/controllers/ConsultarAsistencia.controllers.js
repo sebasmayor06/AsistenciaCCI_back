@@ -15,14 +15,14 @@ export const consultarAsistencia = async (req, res) => {
   asi.nombreinv,
   asist.fecha_de_nacimiento,
   ev.event_date
-  FROM asistencia AS asi
-  INNER JOIN asistentes AS asist
-  ON 
-  asi.dni = asist.dni
+FROM asistencia AS asi
+INNER JOIN asistentes AS asist
+  ON asi.dni = asist.dni
 INNER JOIN eventos AS ev
-  ON 
-  ev.event_id = asi.event_id
-   WHERE ev.event_date = '${fecha}';
+  ON ev.event_id = asi.event_id
+WHERE ev.event_date = '${fecha}'
+ORDER BY asist.full_name ASC;
+
   `;
 
   try {
