@@ -4,10 +4,6 @@ export const consultarAsistenciaEvent = async (req, res) => {
 
   const {eventId} = req.body.event_id
 
-  console.log(eventId);
-  
-
-  
   try {
     const sql = `SELECT * FROM asistencia WHERE event_id = ${eventId}`;
     const { rows } = await pool.query(sql);
