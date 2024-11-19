@@ -8,6 +8,7 @@ import { updateAsistencia } from '../controllers/UpdateAsistencia.controllers.js
 import { consultarAsistenciaEvent } from '../controllers/ConsultarAsistenciaEvent.js'
 import { consultarEvento } from '../controllers/ConsultarEvento.controllers.js'
 import { consultarRegistrados } from '../controllers/ConsultarRegistrados.controllers.js'
+import { consultarEventCCI } from '../controllers/ConsultarEventCCI.controllers.js'
 
 const router = Router()
 
@@ -31,6 +32,7 @@ router.post('/updateAsistencia', updateAsistencia)
 
 //GET 
 router.get('/consultarRegistrados', consultarRegistrados)
+router.get('/consultarEventCCI', consultarEventCCI)
 
 
 
