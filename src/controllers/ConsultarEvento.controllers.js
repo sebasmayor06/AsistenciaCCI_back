@@ -7,7 +7,7 @@ export const consultarEvento = async (req, res) => {
 
   if (eventId !== 0) {
     
-     sql = `SELECT event_date FROM eventos WHERE event_id = '${eventId}'`;
+     sql = `SELECT * FROM eventos WHERE event_id = '${eventId}'`;
      try {
       const { rows } = await pool.query(sql);
       
