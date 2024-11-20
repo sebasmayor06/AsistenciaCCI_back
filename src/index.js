@@ -8,7 +8,9 @@ const app = express();
 
 const allowedOrigins = [
     "https://asistencia-cci-front-dc13af93f3e4.herokuapp.com",
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "http://localhost:3001",
+    "https://iglesiacci.com/"
 ];
 
 app.use(cors({
