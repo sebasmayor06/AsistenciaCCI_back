@@ -9,6 +9,7 @@ import { consultarAsistenciaEvent } from '../controllers/ConsultarAsistenciaEven
 import { consultarEvento } from '../controllers/ConsultarEvento.controllers.js'
 import { consultarRegistrados } from '../controllers/ConsultarRegistrados.controllers.js'
 import { consultarEventCCI } from '../controllers/ConsultarEventCCI.controllers.js'
+import { updateAsistente } from '../controllers/UpdateAsistente.controllers.js'
 
 const router = Router()
 
@@ -33,6 +34,10 @@ router.post('/updateAsistencia', updateAsistencia)
 //GET 
 router.get('/consultarRegistrados', consultarRegistrados)
 router.get('/consultarEventCCI', consultarEventCCI)
+
+
+// PUT
+router.put('/updateAsistente/:dni', updateAsistente);
 
 
 
