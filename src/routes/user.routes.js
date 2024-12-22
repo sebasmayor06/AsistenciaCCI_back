@@ -10,6 +10,7 @@ import { consultarEvento } from '../controllers/ConsultarEvento.controllers.js'
 import { consultarRegistrados } from '../controllers/ConsultarRegistrados.controllers.js'
 import { consultarEventCCI } from '../controllers/ConsultarEventCCI.controllers.js'
 import { updateAsistente } from '../controllers/UpdateAsistente.controllers.js'
+import {updateComida} from '../controllers/actualizarComida.controller.js'
 
 const router = Router()
 
@@ -29,6 +30,7 @@ router.post('/consultarEvento', consultarEvento)
 
 //POST FOR UPDATE
 router.post('/updateAsistencia', updateAsistencia)
+router.post('/updateComida', updateComida)
 
 
 //GET 
