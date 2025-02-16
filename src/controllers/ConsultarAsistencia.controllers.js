@@ -15,8 +15,7 @@ export const consultarAsistencia = async (req, res) => {
   asi.nombreinv,
   asist.fecha_de_nacimiento,
   ev.event_date,
-  asi.registration_time,
-  asi.comida
+  asi.registration_time
 FROM asistencia AS asi
 INNER JOIN asistentes AS asist
   ON asi.dni = asist.dni
