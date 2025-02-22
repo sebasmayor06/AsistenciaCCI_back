@@ -3,6 +3,7 @@ import pool from "../db.js";
 export const consultarEventCCI = async (req, res) => {
     
   const sql = `SELECT * FROM event_cci `;
+  // const {user,rol} = req.user
 
   try {
     const { rows } = await pool.query(sql);
