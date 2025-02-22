@@ -11,6 +11,7 @@ import { consultarRegistrados } from '../controllers/ConsultarRegistrados.contro
 import { consultarEventCCI } from '../controllers/ConsultarEventCCI.controllers.js'
 import { updateAsistente } from '../controllers/UpdateAsistente.controllers.js'
 import {consultarAttend} from '../controllers/ConsultarAttend.controllers.js'
+import {authUser, validateToken} from '../controllers/AuthUser.controllers.js'
 
 const router = Router()
 
@@ -40,6 +41,8 @@ router.post('/consultarAttend', consultarAttend)
 
 // PUT
 router.put('/updateAsistente/:dni', updateAsistente);
+
+router.post('/auth', authUser)
 
 
 
